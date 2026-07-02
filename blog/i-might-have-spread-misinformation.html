@@ -3,64 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Might Have Spread Misinformation - Matías Páez</title>
+    <title>I Might Have Spread Misinformation — Matías Páez</title>
+    <link rel="icon" type="image/png" href="../logo-mp.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #0b0a08;
+            --text: #f2e6d3;
+            --muted: #93897a;
+            --muted-2: #5c5448;
+            --border: #24201a;
+            --accent: #e08a4f;
+            --accent-strong: #b3220a;
+            --accent-glow: #ffb37a;
+            --content-width: 700px;
+            --font-mono: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #fce7d2;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            line-height: 1.8;
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(rgba(242,230,211,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(242,230,211,0.035) 1px, transparent 1px);
+            background-size: 28px 28px;
         }
-        h1 { 
-            color: #db8758; 
-            margin-bottom: 0.5rem;
-            font-size: 2rem;
-        }
-        .date { 
-            color: #666; 
-            margin-bottom: 2rem; 
-        }
-        a { 
-            color: #9c1a04;
+
+        .container { max-width: var(--content-width); margin: 0 auto; padding: 3rem 1rem 4rem; }
+
+        .back-link {
+            font-family: var(--font-mono);
+            display: inline-block;
+            color: var(--muted);
             text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.25s;
         }
-        a:hover {
-            color: #db8758;
+        .back-link:hover { color: var(--accent-glow); }
+
+        header.post-header { margin-bottom: 2.5rem; }
+
+        header.post-header h1 {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
         }
-        .back { 
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #222;
+
+        .post-date { font-family: var(--font-mono); color: var(--muted-2); font-size: 0.8rem; }
+
+        .post-body { color: var(--text); }
+        .post-body p { margin-bottom: 1.25rem; line-height: 1.8; }
+
+        .post-body h2 {
+            font-family: var(--font-mono);
+            color: var(--accent-strong);
+            margin: 2rem 0 1rem;
+            font-size: 1.2rem;
         }
-        p {
+
+        .post-body a { color: var(--accent); }
+        .post-body a:hover { color: var(--accent-glow); }
+
+        .comments-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+        .comments-section h2 {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            color: #fce7d2;
-            text-align: justify;
         }
+
         .quote-section {
             font-style: italic;
-            color: #999;
+            color: var(--muted);
             margin: 2rem 0;
             font-size: 0.95rem;
         }
+
         .embedded-image {
             width: 100%;
             max-width: 600px;
             height: auto;
             margin: 2rem auto;
             display: block;
-            border: 1px solid #222;
+            border: 1px solid var(--border);
             border-radius: 4px;
         }
+
         .text-with-bg {
             position: relative;
             padding: 1.5rem;
             margin: 2rem 0;
             overflow: hidden;
         }
+
         .text-with-bg::before {
             content: "";
             position: absolute;
@@ -74,32 +121,42 @@
             opacity: 0.15;
             z-index: -1;
         }
+
         .text-with-bg p {
             position: relative;
             z-index: 1;
         }
+
         hr {
             border: none;
-            border-top: 1px solid #222;
+            border-top: 1px solid var(--border);
             margin: 3rem 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
         }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back</a>
-    
-    <h1>i might have spread misinformation</h1>
-    <p class="date">March 2026</p>
-    
-    <p class="quote-section">first line of "<a href="three-regrets-and-painful-hope.html">Three regrets and painful hope</a>":</p>
-    
-    <img src="../blog/images/oops.png"  class="embedded-image">
-    
-    <p style="text-align: right; font-style: italic; color: #999; margin-top: -1rem;">- me</p>
-    
-    <div class="text-with-bg">
-        <p style="margin-bottom: 0;">I understand that, without any proper confirmation, my past self had written out an unnecessarily dramatic hook for this site's first blogpost claiming that I won't be going to any international physics olympiad in 2026. This turned out to be wrong and I will, in fact, most likely be going to the 2026 IPhO.</p>
-    </div>
+    <div class="container">
+        <a href="../index.html" class="back-link">← back home</a>
+
+        <header class="post-header">
+            <h1>i might have spread misinformation</h1>
+            <p class="post-date">March 2026</p>
+        </header>
+
+        <div class="post-body">
+            <p class="quote-section">first line of "<a href="three-regrets-and-painful-hope.html">Three regrets and painful hope</a>":</p>
+            
+            <img src="../blog/images/oops.png"  class="embedded-image">
+            
+            <p style="text-align: right; font-style: italic; color: var(--muted); margin-top: -1rem;">- me</p>
+            
+            <div class="text-with-bg">
+                <p style="margin-bottom: 0;">I understand that, without any proper confirmation, my past self had written out an unnecessarily dramatic hook for this site's first blogpost claiming that I won't be going to any international physics olympiad in 2026. This turned out to be wrong and I will, in fact, most likely be going to the 2026 IPhO.</p>
+            </div>
     
     <p>3 months into this year and I'm kind of already tired by all of the backs and forth it has brought, I've not written this post earlier due to fear of having to eat my own words for a second time, but I think that things might have calmed down at this point and I should be able to explain what happened without having to start another blogpost in the same way as this one.</p>
 
@@ -119,10 +176,28 @@
 
     <p>I was hating the aimlessness of my IPhO prep, so I had no better idea than to send an email asking <a href="https://knzhou.github.io" target="_blank">the goat</a> for advice on how to prepare for a second IPhO. He replied after a very short time and suggested I do as he did; learn some higher physics first, then come back to olympiad physics one month before IPhO, as that had made him jump to 5th place in his senior year participation. However since I'm nowhere near knzhou's level and I have no camp training I know that waiting until the last month would probably not be a wise idea. Therefore I settled on reading Landau's Theoretical Minimum volume I, complementing it with some problems from another book, and then taking the advice from a dear friend, Lincoln Liu, for more direct olympiad prep. I am gonna keep alternating between olympiad prep and college physics until the end of April, after which I'll go all in on IPhO. So far this is going well, reading Landau's mech book was fun and I do feel like im making some progress on my problem solving without obsessing over it and getting back into all the unhealthy thought patterns. I'm feeling good.</p>
 
-    <p>(I might be writing more frequent blogposts from now on)</p>
-    
-    <div class="back">
-        <a href="../index.html">← Back to home</a>
+            <p>(I might be writing more frequent blogposts from now on)</p>
+        </div>
+
+        <section class="comments-section">
+            <h2>Comments</h2>
+
+            <script src="https://giscus.app/client.js"
+                data-repo="YOUR-GITHUB-USERNAME/YOUR-REPO-NAME"
+                data-repo-id="YOUR-REPO-ID"
+                data-category="General"
+                data-category-id="YOUR-CATEGORY-ID"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="dark_dimmed"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </section>
     </div>
 </body>
 </html>
