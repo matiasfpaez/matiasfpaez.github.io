@@ -3,50 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three Regrets and Painful Hope - Matías Páez</title>
+    <title>Three Regrets and Painful Hope — Matías Páez</title>
+    <link rel="icon" type="image/png" href="../logo-mp.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #0b0a08;
+            --text: #f2e6d3;
+            --muted: #93897a;
+            --muted-2: #5c5448;
+            --border: #24201a;
+            --accent: #e08a4f;
+            --accent-strong: #b3220a;
+            --accent-glow: #ffb37a;
+            --content-width: 700px;
+            --font-mono: 'Space Grotesk', ui-monospace, SFMono-Regular, monospace;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #fce7d2;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            line-height: 1.8;
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(rgba(242,230,211,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(242,230,211,0.035) 1px, transparent 1px);
+            background-size: 28px 28px;
         }
-        h1 { 
-            color: #db8758; 
-            margin-bottom: 0.5rem;
-            font-size: 2rem;
-        }
-        .date { 
-            color: #666; 
-            margin-bottom: 2rem; 
-        }
-        a { 
-            color: #9c1a04;
+
+        .container { max-width: var(--content-width); margin: 0 auto; padding: 3rem 1rem 4rem; }
+
+        .back-link {
+            font-family: var(--font-mono);
+            display: inline-block;
+            color: var(--muted);
             text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.25s;
         }
-        a:hover {
-            color: #db8758;
+        .back-link:hover { color: var(--accent-glow); }
+
+        header.post-header { margin-bottom: 2.5rem; }
+
+        header.post-header h1 {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
         }
-        .back { 
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #222;
+
+        .post-date { font-family: var(--font-mono); color: var(--muted-2); font-size: 0.8rem; }
+
+        .post-body { color: var(--text); }
+        .post-body p { margin-bottom: 1.25rem; line-height: 1.8; }
+
+        .post-body h2 {
+            font-family: var(--font-mono);
+            color: var(--accent-strong);
+            margin: 2rem 0 1rem;
+            font-size: 1.2rem;
         }
-        p {
+
+        .post-body a { color: var(--accent); }
+        .post-body a:hover { color: var(--accent-glow); }
+
+        .comments-section { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+        .comments-section h2 {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
-            color: #fce7d2;
-            text-align: justify;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
         }
     </style>
 </head>
 <body>
-    <a href="../index.html">← Back</a>
-    
-    <h1>Three Regrets and Painful Hope</h1>
-    <p class="date">13/1/2026</p>
+    <div class="container">
+        <a href="../index.html" class="back-link">← back home</a>
+
+        <header class="post-header">
+            <h1>Three Regrets and Painful Hope</h1>
+            <p class="post-date">13/1/2026</p>
+        </header>
+
+        <div class="post-body">
     
     <p>I am not going to any international physics olympiad in 2026, and the days since that realization hit me have been very unusual. There's no big yet simple goal ahead for which I know what I've got to do in order to succeed. In some ways, I miss the IPhO grind, I miss being able to sit down, open the handout I was working on, and spend hours every day working through it, becoming better at olympiads and learning new, cool things in the process.</p>
 
@@ -80,10 +132,28 @@
 
     <p>Therefore, it ends. I'll probably carry these three regrets for a long time, but I also feel strangely grateful, I feel like I'm free. I'm tired of hope, of constantly thinking about what could potentially come and having that dictate my mood instead of what is. The physics olympiad preparation I did after IPhO always felt like a waste, I was no longer learning new things. It felt as if I was just doing problems about things I already knew, and very slowly working on my ability to come up with or remember ideas to solve them. I spent months grinding not for the physics, but to increase my chances of getting a medal of a color I liked more than brown. It was not healthy, it was fake productivity, it was foolish, and it was slowly killing my biggest passion.</p>
 
-    <p>I want to go back to learning things about physics for the sake of learning (in fact, I've already started doing that and it does feel really good, my passion is coming back), I want to do things I enjoy, and I think I enjoy writing, so this post is just part of my transition away from obsessing over results towards being happy.</p>
-    
-    <div class="back">
-        <a href="../index.html">← Back to home</a>
+            <p>I want to go back to learning things about physics for the sake of learning (in fact, I've already started doing that and it does feel really good, my passion is coming back), I want to do things I enjoy, and I think I enjoy writing, so this post is just part of my transition away from obsessing over results towards being happy.</p>
+        </div>
+
+        <section class="comments-section">
+            <h2>Comments</h2>
+
+            <script src="https://giscus.app/client.js"
+                data-repo="YOUR-GITHUB-USERNAME/YOUR-REPO-NAME"
+                data-repo-id="YOUR-REPO-ID"
+                data-category="General"
+                data-category-id="YOUR-CATEGORY-ID"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="dark_dimmed"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+            </script>
+        </section>
     </div>
 </body>
 </html>
