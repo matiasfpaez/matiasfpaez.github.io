@@ -116,16 +116,26 @@
         /* ---------- Home ---------- */
         .home-content { max-width: var(--content-width); margin: 3rem auto; }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 3px solid var(--accent-strong);
+        .profile-crop {
+            width: 100%;
+            max-width: var(--content-width);
             margin: 0 auto 2rem;
+            overflow: hidden;
+            /* make the visible box height = width * visible-fraction
+               aspect-ratio = width / height = 1 / visible-fraction */
+            aspect-ratio: calc(1 / var(--profile-visible));
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center; /* keep the top visible */
+            border: 3px solid var(--accent-strong);
+            border-radius: 8px; /* set to 50% for circle */
             display: block;
             filter: grayscale(15%);
         }
-
         .home-content h2 {
             font-family: var(--font-mono);
             color: var(--accent-strong);
